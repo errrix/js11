@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "Main_Font";
+  src: url(../fonts/10617.ttf);
+}
+.main {
+  margin: 0 auto;
+  max-width: 420px;
+  background-color: #e94e38;
+  border-radius: 20px;
+  border: 2px solid #000;
+}
+.main_clock {
+  margin-top: 10px;
+  justify-content: center;
+  border-radius: 5px;
+  color: #fff;
+  font-family: Main_Font;
+  font-size: 40px;
+  display: flex;
+}
+.button_block {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+#button_start,
+#button_stop {
+  padding: 12px 0;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-decoration: none;
+  font-size: 15px;
+  height: 47px;
+  font-family: "Main_Font";
+  color: #fff;
+  text-align: center;
+  width: 200px;
+  background-color: #E94E00;
+  border: 2px solid #000;
+  box-shadow: 0 2px 0 #c1412e;
+  display: block;
+}

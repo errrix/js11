@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dz11</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		#second{
+			font-size: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="main_clock">
+			<div id="hour">00:</div>
+			<div id="minute">00:</div>
+			<div id="second">00</div>
+
+		</div>
+		<div class="button_block">
+			<a href="#" id="button_start">
+				СТАРТ
+			</a>
+			<a href="#" id="button_stop">
+					ПАУЗА
+			</a>
+		</div>
+	
+	</div>
+	
+
+	<script>
+		var second = document.getElementById(`second`);
+		var minute = document.getElementById(`minute`);
+		var buttonStart = document.getElementById(`button_start`);
+		var buttonStop = document.getElementById(`button_stop`);
+		
+		buttonStart.addEventListener(`click`, startTimer);
+		buttonStart.addEventListener(`mousedown`, startTimer1);
+		
+
+
+		function startTimer1() {
+			this.style.border = `4px solid white`;
+		}
+
+		
+		var df;
+		var i = 57;
+		var j = 0;
+
+		function clear () {
+			buttonStart.addEventListener(`mousedown`, startTimer1);
+			buttonStart.innerText = 'СТАРТ';
+			buttonStop.innerText = `ПАУЗА`;
+			i = 1;
+			j = 0;
+			this.style.border = ``;
+			buttonStart.addEventListener(`click`, startTimer);
+			clearTimeout(df);
+			second.innerText = `00`;
+			minute.innerText = `00:`;
+
+		}
+
+		function pause () {
+			this.style.border = ``;
+			buttonStart.addEventListener(`mousedown`, startTimer1);
+			buttonStop.innerText = `ОЧИСТИТЬ`
+			buttonStop.addEventListener(`click`, clear);
+			buttonStop.removeEventListener(`click`, pause);
+			buttonStart.innerText = 'ПРОДОЛЖИТЬ';
+			buttonStart.addEventListener(`click`, startTimer);
+			clearTimeout(df);
+		}
+		
+	
+
+
+		function startTimer() {
+			buttonStop.addEventListener(`mousedown`, startTimer1);
+			buttonStart.removeEventListener(`mousedown`, startTimer1);
+			buttonStart.style.border = ``;
+			buttonStop.innerText = `ПАУЗА`;
+			buttonStop.removeEventListener(`click`, clear);
+			buttonStop.addEventListener(`click`, pause);
+			buttonStart.removeEventListener(`click`, startTimer);
+			setTimeout(function timer() {
+				if (i < 10 ) {
+					second.innerText = `0` + i;
+				} else if (i > 60) {
+					i = 1;
+					second.innerText = `0` + i;
+					j++;
+					minute.innerText = `0` + j + `:`;
+				}else{
+					second.innerText = i;
+				}
+				i++;
+				df = setTimeout(timer, 1000);
+			}, 4);
+		}
+		
+	</script>
+</body>
+</html>
