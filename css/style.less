@@ -4,20 +4,17 @@
 }
 .main {
 	margin: 0 auto;
-	max-width: 420px;
+	max-width: 430px;
 	background-color: #e94e38;
 	border-radius: 20px;
 	border: 2px solid #000;
 }
-
-	
-
 .main_clock {
 	margin-top: 10px;
 	justify-content : center;
 	border-radius: 5px;
 	color: #fff;
-	font-family: Main_Font;
+	font-family: "Main_Font";
 	font-size: 40px;
 	display: flex;
 }
@@ -27,23 +24,37 @@
 	margin-top: 10px;
 }
 #button_start, #button_stop{
+	outline: none;
 	padding: 12px 0;
-	margin-bottom: 10px;
+	margin: 0 10px 10px 10px;
 	box-sizing: border-box;
 	border-radius: 15px;
-	margin-right: 10px;
-	margin-left: 10px;
-	text-decoration: none;
 	font-size: 15px;
 	height: 47px;
 	font-family: "Main_Font";
 	color: #fff;
-	text-align: center;
-	width: 200px;
+	min-width: 200px;
 	background-color: #E94E00;
 	border: 2px solid #000;
-	box-shadow: 0 2px 0 #c1412e;
-
-	display: block;
-	
+}
+.circle {
+	background-image: url(../img/ciferblat1.png);
+	background-size: cover;
+	margin: 0 auto;
+	width: 420px;
+	height: 420px;
+	border-radius: 50%;
+	background-color: #fff;
+	position: relative;
+	.arrow {
+		box-sizing: border-box;
+		transform-origin : 0 100% 0;
+		position: absolute;
+		top: 0;
+		left: 209px;
+		background-color: black;
+		width: 2px;
+		height: 210px;
+		
+	}
 }
